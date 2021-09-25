@@ -9,7 +9,6 @@ export default function Seo({ title }: HeadProps) {
   return (
     <NextHead>
       <title>{title}</title>
-      <link rel="shortcut icon" href="/favicon.png" />
       <link rel="shortcut icon" href="/img/icon-512.png" />
       <link rel="apple-touch-icon" href="/img/icon-512.png" />
       <meta property="og:title" content={title} key="title" />

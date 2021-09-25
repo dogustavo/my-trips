@@ -18,6 +18,9 @@ export default createGlobalStyle`
         margin: 0px;
         padding: 0px;
         scroll-behavior: smooth;
+        background: #030518;
+        color: #eeeeee;
+        overflow-y: hidden;
 
         @media (min-width: ${media.small}) {
             font-size: 3vw;
@@ -35,6 +38,12 @@ export default createGlobalStyle`
             cursor: pointer;
         }
     }
+
+    a, p {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
     h1,
     h2,
     h3,
