@@ -11,9 +11,14 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
+    "@styled-icons/evaicons-outline": "^10.34.0",
+    "graphql": "^15.6.0",
+    "graphql-request": "^3.5.0",
+    "leaflet": "^1.7.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-leaflet": "^3.2.1",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
@@ -23,6 +28,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@types/jest": "^27.0.2",
+    "@types/leaflet": "^1.7.5",
     "@types/node": "^16.9.4",
     "@types/react": "^17.0.22",
     "@types/styled-components": "^5.1.14",
