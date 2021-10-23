@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { useRouter } from 'next/dist/client/router'
 
 type Place = {
   id: string
@@ -15,8 +16,10 @@ export type MapProps = {
 }
 
 export default function Map({ places }: MapProps) {
+  const router = useRouter()
+
   const renderMarker = () =>
-    places?.map(({ id, name, location }) => {
+    places?.map(({ id, name, location, slug }) => {
       const { latitude, longitude } = location
 
       return (
@@ -24,14 +27,19 @@ export default function Map({ places }: MapProps) {
           key={`place-${id}`}
           position={[latitude, longitude]}
           title={name}
+          eventHandlers={{
+            click: () => {
+              router.push(`/places/${slug}`)
+            }
+          }}
         />
       )
     })
 
   return (
     <MapContainer
-      center={[51.505, -0.09]}
-      zoom={10}
+      center={[0, 0]}
+      zoom={3}
       style={{ height: '100%', width: '100%' }}
     >
       <TileLayer

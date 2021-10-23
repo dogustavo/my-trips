@@ -20,8 +20,10 @@ export default createGlobalStyle`
         scroll-behavior: smooth;
         background: #030518;
         color: #eeeeee;
-        overflow-y: hidden;
-
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+        
         @media (min-width: ${media.small}) {
             font-size: 3vw;
           }
@@ -33,6 +35,7 @@ export default createGlobalStyle`
 
           }
     }
+   
     a, button {
         &:hover {
             cursor: pointer;

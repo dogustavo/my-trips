@@ -1,30 +1,19 @@
-import Seo from 'components/seo'
-import dynamic from 'next/dynamic'
-import { InfoOutline } from '@styled-icons/evaicons-outline/InfoOutline'
-import { LinkWrapper } from 'components'
+import HomeTemplate from 'templates/Home'
+import { MapProps } from 'components/Map'
+import client from 'graphql/client'
+import { GET_PLACES } from 'graphql/queries'
+import { GetPlacesQuery } from 'graphql/genarated/graphql'
 
-const Map = dynamic(() => import('components/Map'), { ssr: false })
+export default function Home({ places }: MapProps) {
+  return <HomeTemplate places={places} />
+}
 
-const place = [
-  {
-    id: '2',
-    name: 'Itapetininga',
-    slug: 'itape',
-    location: {
-      latitude: -21.161046,
-      longitude: -47.831223
+export const getStaticProps = async () => {
+  const { places } = await client.request<GetPlacesQuery>(GET_PLACES)
+
+  return {
+    props: {
+      places
     }
   }
-]
-
-export default function Home() {
-  return (
-    <>
-      <LinkWrapper href="/about">
-        <InfoOutline size={32} aria-label="About" />
-      </LinkWrapper>
-      <Seo title={'Home'} />
-      <Map places={place} />
-    </>
-  )
 }

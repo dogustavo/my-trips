@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/global'
-import { Main } from './styles'
 import * as theme from 'styles'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,9 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyles />
 
-      <Main>
-        <Component {...pageProps} />
-      </Main>
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }
