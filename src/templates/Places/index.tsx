@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import * as S from './styles'
-
+import Seo from 'components/seo'
 import LinkWrapper from 'components/LinkWrapper'
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
 import { useRouter } from 'next/dist/client/router'
@@ -31,6 +31,7 @@ export default function PlacesTemplate({ place }: PlacesTemplateProps) {
 
   return (
     <S.Content>
+      <Seo title="Places" />
       <LinkWrapper href="/">
         <CloseOutline size={32} aria-label="Go back to map" />
       </LinkWrapper>

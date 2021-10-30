@@ -1,5 +1,6 @@
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
 import LinkWrapper from 'components/LinkWrapper'
+import Seo from 'components/seo'
 
 import * as S from './styles'
 
@@ -11,6 +12,7 @@ export type PageTemplateProps = {
 export default function PageTemplate({ heading, body }: PageTemplateProps) {
   return (
     <S.Content>
+      <Seo title={`${heading}`} />
       <LinkWrapper href="/">
         <CloseOutline size={32} />
       </LinkWrapper>
